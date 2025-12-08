@@ -845,6 +845,10 @@ li a:hover {
         gap: 30px;
     }
     
+      .skills h1 {
+        font-size: 2.5rem;
+    }
+    
     .technical_skills {
         width: 100% !important;
         margin: 0 !important;
@@ -1360,6 +1364,7 @@ div.work{
     }
 }
     
+
 
 
 
