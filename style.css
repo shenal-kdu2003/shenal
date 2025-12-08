@@ -607,7 +607,7 @@ li a:hover {
 
 /* Skills Section */
 .skills {
-    padding: 100px 50px;
+    padding: 100px 150px; /* Your original value */
     color: white;
     scroll-margin-top: 80px;
 }
@@ -651,15 +651,11 @@ li a:hover {
 }
 
 .heading_professional {
-    margin-left: 100px;
+    margin-left: 100px; /* Your original value */
 }
 
 /* Technical Bars - FIXED VERSION */
-.technical_bars {
-    width: 100%;
-}
-
-.bar {
+.technical_bars .bar {
     margin: 30px 0px;
     display: flex;
     align-items: center;
@@ -667,30 +663,27 @@ li a:hover {
     position: relative;
 }
 
-.bar .info {
+.technical_bars .bar .info {
     display: flex;
     align-items: center;
     gap: 15px;
-    width: 150px;
-    min-width: 150px;
+    width: 150px; /* Your original value */
 }
 
-.bar .info i {
+.technical_bars .bar .info i {
     font-size: 40px;
     color: orange;
 }
 
-.bar .info span {
+.technical_bars .bar .info span {
     font-size: 20px; 
     font-weight: 500;
     color: white;
-    white-space: nowrap;
 }
 
-.bar .progress-line {
+.technical_bars .bar .progress-line {
     position: relative;
-    width: 100%;
-    max-width: 300px;
+    width: 300px; /* Your original value - 300px */
     height: 8px;
     background-color: #333;
     border-radius: 10px;
@@ -698,7 +691,7 @@ li a:hover {
     flex: 1;
 }
 
-.bar .progress-line .progress-bar {
+.technical_bars .bar .progress-line .progress-bar {
     position: absolute;
     height: 100%;
     background-color: orange;
@@ -707,25 +700,26 @@ li a:hover {
 }
 
 /* Progress bar widths */
-.bar .progress-line .html { width: 90%; }
-.bar .progress-line .css { width: 80%; }
-.bar .progress-line .javascript { width: 70%; }
-.bar .progress-line .php { width: 60%; }
-.bar .progress-line .nodejs { width: 60%; }
-.bar .progress-line .java { width: 90%; }
-.bar .progress-line .c-plus-plus { width: 90%; }
-.bar .progress-line .python { width: 75%; }
-.bar .progress-line .figma { width: 70%; }
-.bar .progress-line .bootstrap { width: 70%; }
+.progress-line .html { width: 90%; }
+.progress-line .css { width: 80%; }
+.progress-line .javascript { width: 70%; }
+.progress-line .php { width: 60%; }
+.progress-line .nodejs { width: 60%; }
+.progress-line .java { width: 90%; }
+.progress-line .c-plus-plus { width: 90%; }
+.progress-line .python { width: 75%; }
+.progress-line .figma { width: 70%; }
+.progress-line .bootstrap { width: 70%; }
 
 @keyframes fillProgress {
     0% { width: 0%; }
     100% { }
 }
 
-.bar .percentage {
+.technical_bars .bar::after {
+    content: "";
     position: absolute;
-    right: -50px;
+    right: -40px;
     top: 50%;
     transform: translateY(-50%);
     font-size: 14px;
@@ -733,10 +727,20 @@ li a:hover {
     color: orange;
     animation: showText 0.5s 1s linear forwards;
     opacity: 0;
-    min-width: 40px;
 }
 
-/* Professional Skills - Radial Bars (keep as is) */
+.bar:nth-child(1)::after { content: "90%"; }
+.bar:nth-child(2)::after { content: "80%"; }
+.bar:nth-child(3)::after { content: "70%"; }
+.bar:nth-child(4)::after { content: "60%"; }
+.bar:nth-child(5)::after { content: "60%"; }
+.bar:nth-child(6)::after { content: "90%"; }
+.bar:nth-child(7)::after { content: "90%"; }
+.bar:nth-child(8)::after { content: "75%"; }
+.bar:nth-child(9)::after { content: "70%"; }
+.bar:nth-child(10)::after { content: "70%"; }
+
+/* Professional Skills - Radial Bars (keep your original) */
 .radial_bars {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -829,10 +833,10 @@ li a:hover {
     }
 }
 
-/* Responsive skills section */
+/* Responsive skills section - KEEPING YOUR ORIGINAL VALUES */
 @media screen and (max-width: 1024px) {
     .skills {
-        padding: 80px 30px;
+        padding: 80px 30px; /* Your original value */
     }
     
     .skills h1 {
@@ -840,21 +844,17 @@ li a:hover {
     }
     
     .heading_professional {
-        margin-left: 50px;
+        margin-left: 50px; /* Your original value */
     }
     
-    .bar .progress-line {
-        max-width: 250px;
-    }
-    
-    .bar .percentage {
-        right: -45px;
+    .technical_bars .bar .progress-line {
+        width: 250px; /* Your original value */
     }
 }
 
 @media screen and (max-width: 768px) {
     .skills {
-        padding: 60px 20px;
+        padding: 60px 20px; /* Your original value */
     }
     
     .skills h1 {
@@ -869,13 +869,13 @@ li a:hover {
     }
     
     .technical_skills {
-        width: 100%;
-        max-width: 600px;
+        width: 60%; /* Your original value */
+        max-width: 500px; /* Your original value */
     }
     
     .professional_skills {
-        width: 100%;
-        max-width: 600px;
+        width: 100%; /* Your original value */
+        max-width: 500px; /* Your original value */
     }
     
     .heading_technical,
@@ -885,7 +885,7 @@ li a:hover {
         font-size: 1.5rem;
     }
     
-    .bar {
+    .technical_bars .bar {
         flex-direction: row;
         align-items: center;
         gap: 15px;
@@ -893,29 +893,39 @@ li a:hover {
         flex-wrap: wrap;
     }
     
-    .bar .info {
-        width: 120px;
-        min-width: 120px;
+    .technical_bars .bar .info {
+        width: 120px; /* Your original value */
+        min-width: 120px; /* Your original value */
         flex-shrink: 0;
         justify-content: flex-start;
     }
     
-    .bar .progress-line {
-        width: calc(100% - 180px);
-        min-width: 200px;
-        max-width: 300px;
+    .technical_bars .bar .progress-line {
+        width: calc(100% - 180px); /* Your original value */
+        min-width: 200px; /* Your original value */
+        max-width: 300px; /* Your original value */
         height: 8px;
+        position: relative;
+        background-color: #333;
+        border-radius: 10px;
+        overflow: hidden;
     }
     
-    .bar .percentage {
+    .technical_bars .bar .progress-line .progress-bar {
+        position: absolute;
+        height: 100%;
+        background-color: orange;
+        border-radius: 10px;
+        animation: fillProgress 2s ease-in-out forwards;
+    }
+    
+    .technical_bars .bar::after {
         position: relative;
-        right: 0;
         margin-left: 10px;
         transform: none;
         font-size: 14px;
         color: orange;
         font-weight: bold;
-        opacity: 1;
     }
     
     .radial_bars {
@@ -937,7 +947,7 @@ li a:hover {
 
 @media screen and (max-width: 480px) {
     .skills {
-        padding: 40px 15px;
+        padding: 40px 15px; /* Your original value */
     }
     
     .skills h1 {
@@ -951,7 +961,7 @@ li a:hover {
         margin-bottom: 25px;
     }
     
-    .bar {
+    .technical_bars .bar {
         flex-direction: column;
         align-items: center;
         gap: 10px;
@@ -959,27 +969,37 @@ li a:hover {
         text-align: center;
     }
     
-    .bar .info {
+    .technical_bars .bar .info {
         width: 100%;
         justify-content: center;
         margin-bottom: 5px;
     }
     
-    .bar .info span {
+    .technical_bars .bar .info span {
         font-size: 16px;
     }
     
-    .bar .info i {
+    .technical_bars .bar .info i {
         font-size: 30px;
     }
     
-    .bar .progress-line {
+    .technical_bars .bar .progress-line {
         width: 100%;
-        max-width: 280px;
+        max-width: 280px; /* Your original value */
         height: 8px;
+        background-color: #333;
+        position: relative;
     }
     
-    .bar .percentage {
+    .technical_bars .bar .progress-line .progress-bar {
+        position: absolute;
+        height: 100%;
+        background-color: orange;
+        border-radius: 10px;
+        animation: fillProgress 2s ease-in-out forwards;
+    }
+    
+    .technical_bars .bar::after {
         position: relative;
         margin-top: 5px;
         transform: none;
@@ -1013,6 +1033,32 @@ li a:hover {
         font-size: 14px;
     }
 }
+
+/* Additional fix for progress bar animations on all devices */
+@media screen and (max-width: 1024px) {
+    .technical_bars .bar .progress-line {
+        background-color: #333 !important;
+    }
+    
+    .technical_bars .bar .progress-line .progress-bar {
+        background-color: orange !important;
+        display: block !important;
+    }
+    
+    /* Ensure percentage classes work */
+    .progress-line .html { width: 90% !important; }
+    .progress-line .css { width: 80% !important; }
+    .progress-line .javascript { width: 70% !important; }
+    .progress-line .php { width: 60% !important; }
+    .progress-line .nodejs { width: 60% !important; }
+    .progress-line .java { width: 90% !important; }
+    .progress-line .c-plus-plus { width: 90% !important; }
+    .progress-line .python { width: 75% !important; }
+    .progress-line .figma { width: 70% !important; }
+    .progress-line .bootstrap { width: 70% !important; }
+}
+
+
     /*Services Section*/
 #service {
     padding: 80px 50px;
@@ -1450,4 +1496,5 @@ div.work{
     }
 }
     
+
 
