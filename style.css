@@ -607,7 +607,7 @@ li a:hover {
 
 /* Skills Section */
 .skills {
-    padding: 100px 150px;
+    padding: 100px 50px;
     color: white;
     scroll-margin-top: 80px;
 }
@@ -654,7 +654,11 @@ li a:hover {
     margin-left: 100px;
 }
 
-/* Technical Bars */
+/* Technical Bars - FIXED VERSION */
+.technical_bars {
+    width: 100%;
+}
+
 .bar {
     margin: 30px 0px;
     display: flex;
@@ -663,35 +667,38 @@ li a:hover {
     position: relative;
 }
 
-.technical_bars .bar .info {
+.bar .info {
     display: flex;
     align-items: center;
     gap: 15px;
     width: 150px;
+    min-width: 150px;
 }
 
-.technical_bars .bar .info i {
+.bar .info i {
     font-size: 40px;
     color: orange;
 }
 
-.technical_bars .bar .info span {
+.bar .info span {
     font-size: 20px; 
     font-weight: 500;
     color: white;
+    white-space: nowrap;
 }
 
-.technical_bars .bar .progress-line {
+.bar .progress-line {
     position: relative;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     height: 8px;
-    background-color: black;
+    background-color: #333;
     border-radius: 10px;
     overflow: hidden;
     flex: 1;
 }
 
-.technical_bars .bar .progress-line span {
+.bar .progress-line .progress-bar {
     position: absolute;
     height: 100%;
     background-color: orange;
@@ -699,27 +706,26 @@ li a:hover {
     animation: fillProgress 2s ease-in-out forwards;
 }
 
-.progress-line.html span { width: 90%; }
-.progress-line.css span { width: 80%; }
-.progress-line.javascript span { width: 70%; }
-.progress-line.php span { width: 60%; }
-.progress-line.nodejs span { width: 60%; }
-.progress-line.java span { width: 90%; }
-.progress-line.c-plus-plus span { width: 90%; }
-.progress-line.python span { width: 75%; }
-.progress-line.figma span { width: 70%; }
-.progress-line.bootstrap span { width: 70%; }
-
+/* Progress bar widths */
+.bar .progress-line .html { width: 90%; }
+.bar .progress-line .css { width: 80%; }
+.bar .progress-line .javascript { width: 70%; }
+.bar .progress-line .php { width: 60%; }
+.bar .progress-line .nodejs { width: 60%; }
+.bar .progress-line .java { width: 90%; }
+.bar .progress-line .c-plus-plus { width: 90%; }
+.bar .progress-line .python { width: 75%; }
+.bar .progress-line .figma { width: 70%; }
+.bar .progress-line .bootstrap { width: 70%; }
 
 @keyframes fillProgress {
     0% { width: 0%; }
     100% { }
 }
 
-.technical_bars .bar::after {
-    content: "";
+.bar .percentage {
     position: absolute;
-    right: -40px;
+    right: -50px;
     top: 50%;
     transform: translateY(-50%);
     font-size: 14px;
@@ -727,21 +733,10 @@ li a:hover {
     color: orange;
     animation: showText 0.5s 1s linear forwards;
     opacity: 0;
+    min-width: 40px;
 }
 
-.bar:nth-child(1)::after { content: "90%"; }
-.bar:nth-child(2)::after { content: "80%"; }
-.bar:nth-child(3)::after { content: "70%"; }
-.bar:nth-child(4)::after { content: "60%"; }
-.bar:nth-child(5)::after { content: "60%"; }
-.bar:nth-child(6)::after { content: "90%"; }
-.bar:nth-child(7)::after { content: "90%"; }
-.bar:nth-child(8)::after { content: "75%"; }
-.bar:nth-child(9)::after { content: "70%"; }
-.bar:nth-child(10)::after{ content: "70%"; }
-
-
-/* Professional Skills - Radial Bars */
+/* Professional Skills - Radial Bars (keep as is) */
 .radial_bars {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -848,8 +843,12 @@ li a:hover {
         margin-left: 50px;
     }
     
-    .technical_bars .bar .progress-line {
-        width: 250px;
+    .bar .progress-line {
+        max-width: 250px;
+    }
+    
+    .bar .percentage {
+        right: -45px;
     }
 }
 
@@ -870,13 +869,13 @@ li a:hover {
     }
     
     .technical_skills {
-        width: 60%;
-        max-width: 500px;
+        width: 100%;
+        max-width: 600px;
     }
     
     .professional_skills {
         width: 100%;
-        max-width: 500px;
+        max-width: 600px;
     }
     
     .heading_technical,
@@ -886,7 +885,7 @@ li a:hover {
         font-size: 1.5rem;
     }
     
-    .technical_bars .bar {
+    .bar {
         flex-direction: row;
         align-items: center;
         gap: 15px;
@@ -894,40 +893,29 @@ li a:hover {
         flex-wrap: wrap;
     }
     
-    .technical_bars .bar .info {
+    .bar .info {
         width: 120px;
         min-width: 120px;
         flex-shrink: 0;
         justify-content: flex-start;
     }
     
-    .technical_bars .bar .progress-line {
+    .bar .progress-line {
         width: calc(100% - 180px);
         min-width: 200px;
         max-width: 300px;
         height: 8px;
-        position: relative;
-        background-color: #333;
-        border-radius: 10px;
-        overflow: hidden;
     }
     
-    .technical_bars .bar .progress-line span {
-        position: absolute;
-        height: 100%;
-        background-color: orange;
-        border-radius: 10px;
-        animation: fillProgress 2s ease-in-out forwards;
-        transition: width 0.3s ease;
-    }
-    
-    .technical_bars .bar::after {
+    .bar .percentage {
         position: relative;
+        right: 0;
         margin-left: 10px;
         transform: none;
         font-size: 14px;
         color: orange;
         font-weight: bold;
+        opacity: 1;
     }
     
     .radial_bars {
@@ -963,7 +951,7 @@ li a:hover {
         margin-bottom: 25px;
     }
     
-    .technical_bars .bar {
+    .bar {
         flex-direction: column;
         align-items: center;
         gap: 10px;
@@ -971,37 +959,27 @@ li a:hover {
         text-align: center;
     }
     
-    .technical_bars .bar .info {
+    .bar .info {
         width: 100%;
         justify-content: center;
         margin-bottom: 5px;
     }
     
-    .technical_bars .bar .info span {
+    .bar .info span {
         font-size: 16px;
     }
     
-    .technical_bars .bar .info i {
+    .bar .info i {
         font-size: 30px;
     }
     
-    .technical_bars .bar .progress-line {
+    .bar .progress-line {
         width: 100%;
         max-width: 280px;
         height: 8px;
-        background-color: #333;
-        position: relative;
     }
     
-    .technical_bars .bar .progress-line span {
-        position: absolute;
-        height: 100%;
-        background-color: orange;
-        border-radius: 10px;
-        animation: fillProgress 2s ease-in-out forwards;
-    }
-    
-    .technical_bars .bar::after {
+    .bar .percentage {
         position: relative;
         margin-top: 5px;
         transform: none;
@@ -1035,31 +1013,6 @@ li a:hover {
         font-size: 14px;
     }
 }
-
-/* Additional fix for progress bar animations on all devices */
-@media screen and (max-width: 1024px) {
-    .technical_bars .bar .progress-line {
-        background-color: #333 !important;
-    }
-    
-    .technical_bars .bar .progress-line span {
-        background-color: orange !important;
-        display: block !important;
-    }
-    
-    /* Ensure percentage classes work */
-    .progress-line.html span { width: 90% !important; }
-    .progress-line.css span { width: 80% !important; }
-    .progress-line.javascript span { width: 70% !important; }
-    .progress-line.php span { width: 60% !important; }
-    .progress-line.nodejs span { width: 60% !important; }
-    .progress-line.java span { width: 90% !important; }
-    .progress-line.c-plus-plus span { width: 90% !important; }
-    .progress-line.python span { width: 75% !important; }
-    .progress-line.figma span { width: 70% !important; }
-    .progress-line.bootstrap span { width: 70% !important; }
-}
-
     /*Services Section*/
 #service {
     padding: 80px 50px;
@@ -1497,3 +1450,4 @@ div.work{
     }
 }
     
+
